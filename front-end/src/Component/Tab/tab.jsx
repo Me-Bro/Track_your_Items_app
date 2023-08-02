@@ -7,6 +7,10 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import AllRecords from '../../Component/AllRecords';
+import AddRecords from '../../Component/AddRecords';
+import AddItem from '../../Component/AddItem';
+import EditRecords from '../../Component/EditRecords';
+import { NavLink } from "react-router-dom";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -49,6 +53,7 @@ export default function BasicTabs() {
     console.log(newValue)
     setValue(newValue);
   };
+  
 
 
 
@@ -59,27 +64,31 @@ export default function BasicTabs() {
             flexGrow: 1,
             maxWidth: { xs: 1600, sm: 1600 },
             bgcolor: 'background.paper',
-            margin: 'auto',
             marginLeft: '36vw'
           }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="scrollable"
         scrollButtons
         allowScrollButtonsMobile>
-          <Tab  label="AllRecords" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab style={{ margin:'20px' }} className='space-between' label="AllRecords" {...a11yProps(0)} />
+          <Tab style={{ margin:'20px' }} className='space-between' label="AddRecords" {...a11yProps(1)} />
+          <Tab style={{ margin:'20px' }} className='space-between' label="AddItem" {...a11yProps(2)} />
+          <Tab style={{ margin:'20px' }} className='space-between' label="EditRecords" {...a11yProps(3)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
         <AllRecords />
       </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
+      <TabPanel value={value} index={1} >
+        <AddRecords />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <AddItem />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <EditRecords />
       </TabPanel>
       </Box>
     </Card>
   );
 }
+
