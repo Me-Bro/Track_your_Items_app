@@ -25,6 +25,7 @@ export default function Login() {
     <Box
       component="form"
       sx={{
+        backgroundColor:'white',
         marginTop: '1rem',
         display: 'flex',
         flexDirection: 'column',
