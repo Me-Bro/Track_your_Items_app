@@ -17,6 +17,7 @@ function InterviewHome() {
        <Grid item xs={3}><CommonButton label="Class Component" onClick={() => router.push('/classComponent')} /></Grid>
        <Grid item xs={3}> <CommonButton label="Authentication" onClick={() => router.push('/authentication')} /></Grid>
        <Grid item xs={3}> <CommonButton label="Chat App" onClick={() => router.push('/chatapp')} /></Grid>
+       <Grid item xs={3}> <CommonButton label="Store" onClick={() => router.push('/storepage')} /></Grid>
        </Grid>
     </div>
   );
